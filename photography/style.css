@@ -1,0 +1,240 @@
+/* Global Styles */
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --card-bg: #fff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.dark{
+background-color: #1e1e1e;
+color:white;
+}
+/* Header */
+.portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #FEF8DD;
+    color: black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the bottom */
+}
+
+.portfolio-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.theme-toggle {
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    padding: 2rem;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #1e1e1e;
+    object-fit: cover;
+}
+
+.profile-section h2 {
+    margin: 1rem 0 0.5rem;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: #ff6f61;
+}
+
+/* Masonry Grid */
+/* Masonry Grid */
+.masonry-grid {
+    column-count: 4;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+    padding: 1rem;
+    overflow: hidden; /* Prevents overflow during zoom */
+}
+
+.masonry-grid img {
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+    transition: transform 0.7s ease, box-shadow 0.7s ease; /* Smooth transition for zoom */
+    opacity: 1;
+    object-fit: cover;
+    margin-bottom:1rem;
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.masonry-grid img:hover {
+    z-index: 1;
+    transform: scale(1.1); /* Zoom in on hover */
+    box-shadow: 0 15px 26px rgba(0, 0, 0, 0.5); /* Add shadow for effect */
+}
+
+
+
+
+
+/* Modal Styles */
+/* Modal Styles */
+.image-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+    overflow: hidden; /* Ensure content stays inside the modal */
+}
+
+.image-frame {
+    max-width: 90%;
+    max-height: 80%;
+    width: 90%;
+    height: 80%;
+    background-color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent the image from spilling out of the frame */
+}
+
+.modal-content {
+    max-width: auto;
+    max-height: 85%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+    cursor: zoom-in; /* Default cursor for zoom-in */
+    position: relative; /* Required for moving the image */
+}
+
+.modal-content.zoomed {
+    cursor: move; /* Change cursor to move when zoomed in */
+    transform-origin: center center; /* Keep zoom centered */
+}
+
+
+#modal-caption {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+    transition: background 0.3s ease;
+}
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+.nav-button.prev {
+    left: 30px;
+}
+
+.nav-button.next {
+    right: 30px;
+}
+
+/* Mobile Compatibility */
+@media (max-width: 768px) {
+    .masonry-grid {
+        column-count: 2;
+        column-gap:0.2rem;
+        row-gap: 0.2rem; /* Smaller row gap for mobile screens */
+        padding:0.2rem;
+    }
+
+    .nav-button {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+
+
+    .modal-content {
+        max-width: 95%;
+        max-height: 75%;
+    }
+    .masonry-grid img{
+        margin-bottom:0.2rem;
+        border-radius:0px;
+
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

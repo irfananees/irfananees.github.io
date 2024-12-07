@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irfan's Portfolio Galleria</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header class="portfolio-header">
+        <h1 >Portfolio Galleria</h1>
+        <button id="theme-toggle" class="theme-toggle">🌞</button>
+    </header>
+
+    <section id="profile" class="profile-section">
+        <div class="profile-picture">
+            <img src="profile.jpg" alt="Profile Picture">
+        </div>
+        <h2>Irfan</h2>
+        <div class="contact-links">
+            <a href="mailto:irfananees1993@gmail.com">irfananees1993@gmail.com</a>
+            <p>Phone: +3094723311</p>
+        </div>
+    </section>
+
+    <p id="loading">Loading photos, please wait...</p>
+    <section id="gallery" class="masonry-grid">
+        <!-- Photos will be added dynamically here -->
+    </section>
+
+    <footer class="portfolio-footer">
+        <p>&copy; 2024 Irfan's Portfolio Galleria. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="image-modal" class="image-modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="image-frame">
+        <img class="modal-content" id="modal-image" />
+        </div>
+        <div id="modal-caption"></div>
+        <button class="nav-button prev" onclick="prevImage()">&#10094;</button>
+        <button class="nav-button next" onclick="nextImage()">&#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
